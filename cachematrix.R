@@ -1,7 +1,9 @@
 ##The first function called makeCacheMatrix, initialize the 
 ##functions list  set, get, setinv and getinv.
 ##In the "set" function, there is a validation to check if the 
-##matrix that is being set is the sameone as the previous one.
+##matrix that is being set is the same one as the previous one,
+##in case it is the same one, the matrix is not set and the inv is not 
+##set to NULL.
 makeCacheMatrix <- function(x = matrix()) {
         ##The inv cached variable holds the value of the matrix inverse.
         ##When the fuction is first initialized, the inv is set to NULL.
@@ -24,7 +26,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ##cacheSolve function, returns the inverse of the matrix
-##from cache is the invers has already been calculated,
+##from cache if the invers has already been calculated,
 ##and calculates it if the inverse has not been calculated
 ##or if the one in cache is for a different matrix.
 cacheSolve <- function(x, ...) {
